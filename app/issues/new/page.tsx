@@ -9,6 +9,7 @@ import { Controller, useForm } from 'react-hook-form';
 import SimpleMDEReact from 'react-simplemde-editor';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
+import ErrorMessage from '@/app/components/ErrorMessage';
 
 type IssueForm = z.infer<typeof createIssueSchema>;
 
@@ -41,8 +42,7 @@ const NewIssuePage = () => {
         })}
       >
         <TextField.Root placeholder="Title" {...register('title')} />
-        {errors.title && <p className="text-red-600">{errors.title.message}</p>}
-
+        <ErrorMessage>{errors.title?.message}</ErrorMessage>
         <Controller
           control={control}
           name="description"
@@ -50,9 +50,7 @@ const NewIssuePage = () => {
             <SimpleMDEReact placeholder="Add description here" {...field} />
           )}
         />
-        {errors.description && (
-          <p className="text-red-600">{errors.description.message}</p>
-        )}
+        <ErrorMessage>{errors.description?.message}</ErrorMessage>
         <Button>Submit new issue</Button>
       </form>
     </div>
