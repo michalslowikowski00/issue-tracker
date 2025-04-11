@@ -6,9 +6,18 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+<<<<<<< HEAD
     "lint": "next lint"
   },
   "dependencies": {
+=======
+    "lint": "next lint",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "@prisma/client": "^5.3.1",
+    "@radix-ui/themes": "^3.2.1",
+>>>>>>> creating-issues
     "@types/node": "22.14.0",
     "@types/react": "19.1.0",
     "@types/react-dom": "19.1.2",
@@ -16,14 +25,27 @@
     "eslint": "9.24.0",
     "eslint-config-next": "15.2.5",
     "next": "15.2.5",
+<<<<<<< HEAD
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-icons": "^4.11.0",
     "typescript": "5.8.3"
+=======
+    "prisma": "^5.3.1",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "react-icons": "^4.11.0",
+    "typescript": "5.8.3",
+    "zod": "^3.22.2"
+>>>>>>> creating-issues
   },
   "devDependencies": {
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.3",
+<<<<<<< HEAD
+=======
+    "prettier": "^3.5.3",
+>>>>>>> creating-issues
     "tailwindcss": "^3.4.1"
   }
 }
