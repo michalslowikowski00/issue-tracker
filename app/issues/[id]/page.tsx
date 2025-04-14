@@ -4,11 +4,11 @@ import { Card, Flex, Heading } from '@radix-ui/themes';
 import { notFound } from 'next/navigation';
 import ReactMarkdown from 'react-markdown';
 
-interface IssueDetailPage {
+interface IssueDetailPageProps {
   params: { id: string };
 }
 
-const IssueDetailPage = async ({ params }: IssueDetailPage) => {
+const IssueDetailPage = async ({ params }: IssueDetailPageProps) => {
   if (typeof params.id !== 'string') {
     notFound();
   }
@@ -29,7 +29,7 @@ const IssueDetailPage = async ({ params }: IssueDetailPage) => {
         {issue.createdAt.toDateString()}
       </Flex>
       <Card className="prose" mt="4">
-        <ReactMarkdown>{issue.description}</ReactMarkdown>
+        <ReactMarkdown className="markdown">{issue.description}</ReactMarkdown>
       </Card>
     </div>
   );
