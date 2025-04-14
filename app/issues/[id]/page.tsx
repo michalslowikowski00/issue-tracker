@@ -13,6 +13,8 @@ const IssueDetailPage = async ({ params }: IssueDetailPageProps) => {
     notFound();
   }
 
+  const { id } = await params;
+
   const issue = await prisma.issue.findUnique({
     where: { id: parseInt(params.id) },
   });
