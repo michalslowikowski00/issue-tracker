@@ -1,5 +1,5 @@
 'use client';
-import { createIssueSchema } from '@/app/validationSchemas';
+import { issueSchema } from '@/app/validationSchemas';
 import { Button, Callout, Spinner, TextField } from '@radix-ui/themes';
 import axios from 'axios';
 import 'easymde/dist/easymde.min.css';
@@ -16,7 +16,7 @@ const SimpleMDEReact = dynamic(() => import('react-simplemde-editor'), {
   ssr: false,
 });
 
-type IssueFormData = z.infer<typeof createIssueSchema>;
+type IssueFormData = z.infer<typeof issueSchema>;
 
 interface IssueFormParams {
   issue?: Issue;
@@ -31,7 +31,7 @@ const IssueForm = ({ issue }: IssueFormParams) => {
     handleSubmit,
     control,
     formState: { errors },
-  } = useForm<IssueFormData>({ resolver: zodResolver(createIssueSchema) });
+  } = useForm<IssueFormData>({ resolver: zodResolver(issueSchema) });
 
   const onSubmit = handleSubmit(async (data) => {
     try {
